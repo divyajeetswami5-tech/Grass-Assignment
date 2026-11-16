@@ -1,8 +1,9 @@
 # Grass Assignment
 
-A repository containing two Python data science and software engineering projects:
+A repository containing three Python data science, machine learning, and software engineering projects:
 1. **Analysis on Titanic Dataset**: Exploratory Data Analysis (EDA), feature engineering, and predictive modeling using NumPy, Pandas, Matplotlib, and Scikit-Learn.
 2. **Library Management System Using Python**: An Object-Oriented Library Management System with borrowing rules, fine calculations, JSON persistence, analytics reporting, and an interactive CLI menu.
+3. **Iris Flower Classification and Machine Learning**: Exploratory Data Analysis, regression analysis, classical classification (Logistic Regression, Random Forest, KNN, SVM), unsupervised clustering (K-Means, PCA), and deep learning architectures (MLP, 1D-CNN, Tabular Transformer) using Scikit-Learn and PyTorch.
 
 ---
 
@@ -13,6 +14,9 @@ Grass-Assignment/
 ├── Analysis on titanic dataset/
 │   ├── Titanic_Analysis.ipynb         # EDA, feature engineering, and ML modeling
 │   └── Titanic-Dataset.csv            # Titanic dataset
+├── Iris flower classification/
+│   ├── Iris_ML_Project.ipynb          # EDA, classical ML, clustering, and deep learning
+│   └── Iris.csv                       # Iris flower dataset
 ├── Library management using python/
 │   └── Library_Management_System.ipynb # OOP Library Management System notebook
 ├── .gitignore                         # Standard Python & Jupyter ignore rules
@@ -82,6 +86,39 @@ An Object-Oriented Programming (OOP) implementation of a comprehensive Library M
 
 ---
 
+## Project 3: Iris Flower Classification and Machine Learning
+
+### Overview
+This project presents an extensive comparative machine learning and deep learning investigation into the Iris dataset to accurately classify flower species (`Iris-setosa`, `Iris-versicolor`, `Iris-virginica`) based on morphological petal and sepal measurements.
+
+### Workflow & Key Highlights
+- **Exploratory Data Analysis (EDA)**:
+  - Pairplots and kernel density estimates highlighting distinct feature distributions and multi-modal boundaries.
+  - Multi-feature boxplots and correlation analysis demonstrating the strong linear correlation between petal length and petal width (~0.96) versus negative correlation with sepal width (~-0.4).
+- **Data Preparation**:
+  - Leakage-free workflow: train/test split performed before feature scaling.
+  - Standardized continuous input features using `StandardScaler`.
+- **Regression Analysis**:
+  - Linear Regression baseline predicting continuous `PetalWidthCm` from remaining morphological features ($R^2 \approx 0.93$).
+- **Classical Classification Models**:
+  - **Logistic Regression**: Multi-class softmax classification with probabilistic confidence output.
+  - **Random Forest Classifier**: Non-linear tree ensemble with Gini-based feature importance ranking and hyperparameter optimization via `GridSearchCV`.
+  - **K-Nearest Neighbors (KNN)**: Distance-based neighbor voting ($k=5$).
+  - **Support Vector Machine (SVM)**: Non-linear RBF kernel classification.
+  - Evaluated with 5-fold stratified cross-validation on training data and out-of-sample test set evaluation (Accuracy and Macro F1 score).
+- **Unsupervised Learning & Clustering**:
+  - **K-Means Clustering** ($k=3$) evaluated using Silhouette Score and Adjusted Rand Index (ARI).
+  - 2D **Principal Component Analysis (PCA)** visualization showing clean unsupervised separation of `setosa` and natural boundary proximity between `versicolor` and `virginica`.
+- **Deep Learning Architectures (PyTorch)**:
+  - **Multi-Layer Perceptron (MLP)**: Deep feedforward architecture with Dropout regularization.
+  - **1D Convolutional Neural Network (1D-CNN)**: Feature-extraction convolutions over tabular dimensions.
+  - **Tabular Transformer**: Multi-head self-attention network capturing pairwise feature interactions.
+  - Training loss / validation loss convergence tracking across epochs.
+- **Model Benchmark & Comparison**:
+  - Consolidated comparison table and visual bar charts ranking all classical and deep learning models by Test Accuracy and Test Macro F1 score.
+
+---
+
 ## Installation & Setup
 
 ### 1. Prerequisites
@@ -105,6 +142,7 @@ jupyter notebook
 ```
 Navigate to:
 - `Analysis on titanic dataset/Titanic_Analysis.ipynb`
+- `Iris flower classification/Iris_ML_Project.ipynb`
 - `Library management using python/Library_Management_System.ipynb`
 
 ---
@@ -114,8 +152,9 @@ Navigate to:
 - **Libraries**:
   - `NumPy` - Numerical operations & array transformations
   - `Pandas` - Data manipulation, pivot tables, and tabular analysis
-  - `Matplotlib` - Data visualization & plotting
-  - `Scikit-Learn` - Predictive classification models & evaluation metrics
+  - `Matplotlib` & `Seaborn` - Data visualization & statistical plotting
+  - `Scikit-Learn` - Predictive classification models, clustering & evaluation metrics
+  - `PyTorch` - Deep learning architectures (MLP, 1D-CNN, Tabular Transformer)
   - `JSON` & `DateTime` - File persistence and date/fine calculations
 
 ---
